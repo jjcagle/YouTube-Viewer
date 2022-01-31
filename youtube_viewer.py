@@ -773,7 +773,7 @@ def save_bandwidth(driver):
             "//div[contains(text(),'Quality')]").click()
 
         random_quality = choices(
-            ['144p', '240p', '360p'], cum_weights=(0.7, 0.9, 1.00), k=1)[0]
+            ['144p'], cum_weights=(0.7, 0.9, 1.00), k=1)[0]
         quality = WebDriverWait(driver, 10).until(EC.element_to_be_clickable(
             (By.XPATH, f"//span[contains(string(),'{random_quality}')]")))
         driver.execute_script(
